@@ -54,7 +54,7 @@ async function GetCode() {
     cl1.length && cl2.length ? results.push({
       date: cl1[0] || "unknown",
       code: cl1[1].replace(/\s?\"\s?/gi, "") || "unknown",
-      status: cl1[3] || "unknown",
+      status: (cl1[3] === "Live") ? "Active" : "Expired" || "unknown",
       reward: cl2[1] || "unknown"
     }) : null;
   });
